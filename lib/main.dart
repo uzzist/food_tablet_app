@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.white,
             primaryColor: AppColors.primary,
             useMaterial3: true,
+            appBarTheme: AppBarTheme(
+              backgroundColor: AppColors.appBarColor
+            )
           ),
           getPages: [
             GetPage(
