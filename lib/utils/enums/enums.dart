@@ -1,0 +1,1 @@
+enum OrderOption {none, dine, takeAway}
