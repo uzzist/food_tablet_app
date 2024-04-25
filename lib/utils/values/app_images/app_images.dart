@@ -7,4 +7,14 @@ class AppImages {
   static const String dutch = 'assets/images/dutch.png';
   static const String english = 'assets/images/english.png';
   static const String arabic = 'assets/images/arabic.png';
+  static const String burger = 'assets/images/burger.png';
+  static const String pizza = 'assets/images/pizza.png';
+  static const String sandwich = 'assets/images/sandwich.png';
+  static const String pasta = 'assets/images/pasta.png';
+  static const String taco = 'assets/images/taco.png';
+  static const String fries = 'assets/images/fries.png';
+  static const String drumSticks = 'assets/images/drumSticks.png';
+  static const String nuggets = 'assets/images/nuggets.png';
+  static const String cake = 'assets/images/cake.png';
+  static const String sauce = 'assets/images/sauce.png';
 }

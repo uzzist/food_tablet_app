@@ -103,7 +103,7 @@ class ChooseOptionScreen extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => const HomeScreen());
+                      Get.to(() => HomeScreen());
                     },
                     child: Image.asset(
                       AppImages.dutch,
@@ -114,7 +114,7 @@ class ChooseOptionScreen extends StatelessWidget {
                   40.sbw,
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => const HomeScreen());
+                      Get.to(() => HomeScreen());
                     },
                     child: Image.asset(
                       AppImages.english,
@@ -125,7 +125,7 @@ class ChooseOptionScreen extends StatelessWidget {
                   40.sbw,
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => const HomeScreen());
+                      Get.to(() => HomeScreen());
                     },
                     child: Image.asset(
                       AppImages.arabic,
