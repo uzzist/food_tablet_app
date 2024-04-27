@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_tablet_app/utils/values/app_colors/app_colors.dart';
 import 'package:food_tablet_app/views/welcome/start_screen.dart';
@@ -9,6 +10,8 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'data/data_binding/data_binding.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(const MyApp());
 }
 

@@ -17,4 +17,7 @@ class AppImages {
   static const String nuggets = 'assets/images/nuggets.png';
   static const String cake = 'assets/images/cake.png';
   static const String sauce = 'assets/images/sauce.png';
+  static const String empty_cart = 'assets/images/empty_cart.png';
+  static const String burger_cover = 'assets/images/burger_cover.png';
+  static const String bun = 'assets/images/bun.png';
 }
