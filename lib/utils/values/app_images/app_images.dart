@@ -21,4 +21,8 @@ class AppImages {
   static const String burger_cover = 'assets/images/burger_cover.png';
   static const String bun = 'assets/images/bun.png';
   static const String dessert = 'assets/images/dessert.png';
+  static const String payment_cash = 'assets/images/payment_cash.png';
+  static const String payment_card = 'assets/images/payment_card.png';
+  static const String order_confirmed = 'assets/images/order_confirmed.png';
+  static const String pick_order = 'assets/images/pick_order.png';
 }

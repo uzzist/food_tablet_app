@@ -1,6 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_tablet_app/utils/extensions/extensions.dart';
+import 'package:food_tablet_app/utils/values/app_images/app_images.dart';
+import 'package:food_tablet_app/views/checkout/order_confirmed_screen.dart';
+import 'package:food_tablet_app/views/home/home_screen.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../utils/values/app_colors/app_colors.dart';
 import '../../utils/values/styles/styles.dart';
@@ -29,7 +36,7 @@ class CheckoutScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.48,
+                width: MediaQuery.of(context).size.width * 0.4,
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
@@ -42,7 +49,7 @@ class CheckoutScreen extends StatelessWidget {
                   color: AppColors.beige,
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(32.r), bottomLeft: Radius.circular(32.r))
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -255,7 +262,7 @@ class CheckoutScreen extends StatelessWidget {
               ),
               20.sbw,
               Container(
-                width: MediaQuery.of(context).size.width * 0.48,
+                width: MediaQuery.of(context).size.width * 0.4,
                 decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -268,7 +275,7 @@ class CheckoutScreen extends StatelessWidget {
                     color: AppColors.light_lavender,
                     borderRadius: BorderRadius.only(bottomRight: Radius.circular(32.r), bottomLeft: Radius.circular(32.r))
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -440,7 +447,152 @@ class CheckoutScreen extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          Spacer(),
+          Container(
+            height: 126.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0,3),
+                  blurRadius: 10,
+                  spreadRadius: 0,
+                  color: AppColors.black.withOpacity(.12)
+                )
+              ]
+            ),
+            child: Center(
+              child: RichText(
+                text: TextSpan(
+                  text: 'Total: ',
+                  style: kSize24DarkW500Text.copyWith(
+                    fontSize: 44.sp,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: '\$45.07',
+                      style: kSize24DarkW500Text.copyWith(
+                        fontSize: 64.sp,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primary
+                      )
+                    )
+                  ]
+                ),
+              ),
+            ),
+          ),
+          Spacer(),
+          Container(
+            height: 685.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: AppColors.white,
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0,3),
+                      blurRadius: 10,
+                      spreadRadius: 0,
+                      color: AppColors.black.withOpacity(.12)
+                  )
+                ]
+            ),
+            padding: EdgeInsets.only(top: 30.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 130.w),
+                  child: Text('Choose payment method', style: kSize22DarkW500Text.copyWith(
+                    color: AppColors.primary
+                  ),),
+                ),
+                30.sbh,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => OrderConfirmedScreen());
+                      },
+                      child: Container(
+                        height: 532.h,
+                        width: 612.w,
+                        decoration: BoxDecoration(
+                          color: AppColors.light_lavender,
+                          borderRadius: BorderRadius.only(topRight: Radius.circular(64.r))
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(AppImages.payment_cash),
+                            30.sbh,
+                            Text('Cash at the counter', style: kSize24DarkW500Text.copyWith(
+                              fontSize: 30.sp
+                            ),)
+
+                          ],
+                        ),
+                      ),
+                    ),
+                    40.sbw,
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => OrderConfirmedScreen());
+                      },
+                      child: Container(
+                        height: 532.h,
+                        width: 612.w,
+                        decoration: BoxDecoration(
+                            color: AppColors.beige,
+                            borderRadius: BorderRadius.only(topRight: Radius.circular(64.r))
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(AppImages.payment_card),
+                            30.sbh,
+                            Text('Payment by card', style: kSize24DarkW500Text.copyWith(
+                                fontSize: 30.sp
+                            ),)
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+
+              ],
+            ),
+          ),
+          Spacer(),
+          TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: AppColors.pink,
+                fixedSize: Size(690.w, 73.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16
+                      .r), // Set the border radius here
+                ),
+              ),
+              onPressed: () {
+                Get.offAll(() => HomeScreen());
+              },
+              child: Center(
+                child: Text(
+                  'Return to my order',
+                  style: kSize18DarkW500Text.copyWith(
+                      color: AppColors.white,
+                    fontSize: 30.sp,
+                  ),
+                ),
+              )),
+          60.sbh,
         ],
       ),
     );
