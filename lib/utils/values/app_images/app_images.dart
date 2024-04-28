@@ -20,4 +20,5 @@ class AppImages {
   static const String empty_cart = 'assets/images/empty_cart.png';
   static const String burger_cover = 'assets/images/burger_cover.png';
   static const String bun = 'assets/images/bun.png';
+  static const String dessert = 'assets/images/dessert.png';
 }

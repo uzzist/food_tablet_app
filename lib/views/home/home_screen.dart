@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_tablet_app/controllers/home_controller.dart';
 import 'package:food_tablet_app/utils/extensions/extensions.dart';
 import 'package:food_tablet_app/utils/values/app_colors/app_colors.dart';
 import 'package:food_tablet_app/utils/values/app_images/app_images.dart';
 import 'package:food_tablet_app/utils/values/styles/styles.dart';
+import 'package:food_tablet_app/views/home/all_categories_screen.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
+import '../checkout/checkout_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -357,6 +358,135 @@ class HomeScreen extends StatelessWidget {
                                                   ),
                                                 ),
                                                 onPressed: () {
+                                                  showDialog(context: context, builder: (context) {
+                                                    return AlertDialog(
+                                                      contentPadding: EdgeInsets.zero,
+                                                      content: Container(
+                                                        height: MediaQuery.of(context).size.height * 0.4,
+                                                        width: MediaQuery.of(context).size.width,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(16.r),
+                                                          color: AppColors.white,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              offset: Offset(0,3),
+                                                              blurRadius: 10,
+                                                              spreadRadius: 0,
+                                                              color: AppColors.black.withOpacity(.12)
+                                                            )
+                                                          ]
+                                                        ),
+                                                        child: Column(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: [
+                                                            Text('Do you want to add more items', style: kSize24DarkW500Text.copyWith(
+                                                              fontSize: 44.sp,
+                                                            ),),
+                                                            30.sbh,
+                                                            Row(
+                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                              children: [
+                                                                GestureDetector(
+                                                                  onTap: (){
+                                                                    Get.to(() => AllCategoriesScreen());
+                                                                  },
+                                                                  child: Container(
+                                                                    height: MediaQuery.of(context).size.height * 0.2,
+                                                                    width: MediaQuery.of(context).size.width * 0.2,
+                                                                    decoration: BoxDecoration(
+                                                                      boxShadow: [
+                                                                        BoxShadow(
+                                                                          offset: Offset(0,3),
+                                                                          blurRadius: 5,
+                                                                          spreadRadius: 0,
+                                                                          color: AppColors.black.withOpacity(.08)
+                                                                        )
+                                                                      ],
+                                                                      color: AppColors.white,
+                                                                    ),
+                                                                    child: Column(
+                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsets.all(16.h),
+                                                                          child: Image.asset(AppImages.dessert),
+                                                                        ),
+                                                                        Text('Dessert', style: kSize24DarkW500Text.copyWith(
+                                                                          fontSize: 29.sp,
+                                                                          fontWeight: FontWeight.normal,
+                                                                          color: AppColors.primary
+                                                                        ),)
+                                                                      ],
+                                                                    )
+                                                                  ),
+                                                                ),
+                                                                30.sbw,
+                                                                Container(
+                                                                    height: MediaQuery.of(context).size.height * 0.2,
+                                                                    width: MediaQuery.of(context).size.width * 0.2,
+                                                                    decoration: BoxDecoration(
+                                                                      boxShadow: [
+                                                                        BoxShadow(
+                                                                            offset: Offset(0,3),
+                                                                            blurRadius: 5,
+                                                                            spreadRadius: 0,
+                                                                            color: AppColors.black.withOpacity(.08)
+                                                                        )
+                                                                      ],
+                                                                      color: AppColors.white,
+                                                                    ),
+                                                                    child: Column(
+                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsets.all(16.h),
+                                                                          child: Image.asset(AppImages.pizza),
+                                                                        ),
+                                                                        Text('Pizza', style: kSize24DarkW500Text.copyWith(
+                                                                            fontSize: 29.sp,
+                                                                            fontWeight: FontWeight.normal,
+                                                                            color: AppColors.primary
+                                                                        ),)
+                                                                      ],
+                                                                    )
+                                                                ),
+                                                                30.sbw,
+                                                                Container(
+                                                                    height: MediaQuery.of(context).size.height * 0.2,
+                                                                    width: MediaQuery.of(context).size.width * 0.2,
+                                                                    decoration: BoxDecoration(
+                                                                      boxShadow: [
+                                                                        BoxShadow(
+                                                                            offset: Offset(0,3),
+                                                                            blurRadius: 5,
+                                                                            spreadRadius: 0,
+                                                                            color: AppColors.black.withOpacity(.08)
+                                                                        )
+                                                                      ],
+                                                                      color: AppColors.white,
+                                                                    ),
+                                                                    child: Column(
+                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsets.all(16.h),
+                                                                          child: Image.asset(AppImages.sandwich),
+                                                                        ),
+                                                                        Text('Sandwich', style: kSize24DarkW500Text.copyWith(
+                                                                            fontSize: 29.sp,
+                                                                            fontWeight: FontWeight.normal,
+                                                                            color: AppColors.primary
+                                                                        ),)
+                                                                      ],
+                                                                    )
+                                                                ),
+                                                              ],
+                                                            )
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    );
+                                                  });
 
                                                 },
                                                 child: Center(
@@ -478,7 +608,9 @@ class HomeScreen extends StatelessWidget {
                                               .r), // Set the border radius here
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Get.to(() => CheckoutScreen());
+                                      },
                                       child: Center(
                                         child: Text(
                                           'Checkout',
